@@ -4,7 +4,7 @@ Execute system commands and store the output in a Github gist. A backup tool for
 
 ## Requirements
 
-You need an `.env` file with following content:
+You need an `.env` file with following content:
 
 ```text
 GITHUB_ACCESS_TOKEN=...
@@ -15,7 +15,7 @@ Also, create a `tasks.json` in the following format:
 
 ```text
 {
-  "backup.txt": "cat ~/quotes.txt"
+  "backup.txt": "cat ~/quotes.txt"
 }
 ```
 
@@ -25,5 +25,5 @@ Also, create a `tasks.json` in the following format:
 
 ## Get started
 
-`node index.js`
+`node index.js`
 
