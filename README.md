@@ -26,4 +26,7 @@ Also, create a `tasks.json` in the following format:
 ## Get started
 
 `node index.js`
-
+
+## CRON job on Mac OS
+
+`crontab -e` with content similar to `0 12 * * * /usr/local/node /user/epic-sync/index.js`
