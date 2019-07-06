@@ -1,6 +1,6 @@
 # Epic sync
 
-Execute system commands and store the output in a Github gist. A backup tool for dotfiles.
+Execute system commands and store the output in a Github gist.
 
 ## Requirements
 
