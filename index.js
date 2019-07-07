@@ -12,12 +12,12 @@ const fileExists = require('file-exists')
 const TASK_FILE = path.join(__dirname, 'tasks.json')
 
 if (process.env.GITHUB_ACCESS_TOKEN == null || process.env.GITHUB_GIST_ID == null) {
-  console.log('Environment variables not provided')
+  console.error('Environment variables not provided')
   process.exit()
 }
 
 if (!fileExists.sync(TASK_FILE)) {
-  console.log('Missing tasks.json')
+  console.error('Missing tasks.json')
   process.exit()
 }
 
