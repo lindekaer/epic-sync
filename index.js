@@ -1,4 +1,6 @@
-require('dotenv').config()
+const path = require('path')
+
+require('dotenv').config({ path: path.join(__dirname, '.env') })
 
 const fs = require('fs')
 const execSync = require('child_process').execSync
@@ -6,7 +8,6 @@ const _flow = require('lodash/fp/flow')
 const _mapValues = require('lodash/fp/mapValues')
 const github = require('octonode')
 const fileExists = require('file-exists')
-const path = require('path')
 
 const TASK_FILE = path.join(__dirname, 'tasks.json')
 
