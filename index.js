@@ -32,7 +32,7 @@ const runUpdate = async tasks => {
   )(tasks)
 
   await client.editAsync(process.env.GITHUB_GIST_ID, {
-    description: `Personal backup from: ${new Date()}`,
+    description: `Backup from: ${new Date()}`,
     public: false,
     files
   })
