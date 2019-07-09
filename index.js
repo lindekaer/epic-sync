@@ -36,8 +36,6 @@ const runUpdate = async tasks => {
     public: false,
     files
   })
-
-  console.log('Completed!')
 }
 
 // Utils
