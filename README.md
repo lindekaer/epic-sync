@@ -11,13 +11,15 @@ GITHUB_ACCESS_TOKEN=...
 GITHUB_GIST_ID=...
 ```
 
-Also, create a `tasks.json` in the following format:
-
+Create a `tasks.json` containing an object with filenames (key) and terminal commands (value). The output from each terminal command will be stored under the corresponding filename dicatated by the key. Consider this example:
 ```text
 {
   "backup.txt": "cat ~/quotes.txt"
 }
 ```
+
+
+
 
 ## Installation
 
