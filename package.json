@@ -9,9 +9,9 @@
   "author": "",
   "license": "ISC",
   "dependencies": {
-    "dotenv": "^8.0.0",
-    "file-exists": "^5.0.1",
-    "lodash": "^4.17.11",
-    "octonode": "^0.9.5"
+    "dotenv": "8.0.0",
+    "file-exists": "5.0.1",
+    "lodash": "4.17.13",
+    "octonode": "0.9.5"
   }
 }
