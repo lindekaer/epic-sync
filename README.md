@@ -7,8 +7,8 @@ Execute system commands and store the output in a Github gist.
 You need an `.env` file with following content:
 
 ```text
-GITHUB_ACCESS_TOKEN=...
-GITHUB_GIST_ID=...
+GITHUB_ACCESS_TOKEN=[SOME_TOKEN]
+GITHUB_GIST_ID=[SOME_ID]
 ```
 
 Create a `tasks.json` containing an object with filenames (key) and terminal commands (value). The output from each terminal command will be stored under the corresponding filename dicatated by the key. Consider this example:
@@ -18,9 +18,6 @@ Create a `tasks.json` containing an object with filenames (key) and terminal com
 }
 ```
 
-
-
-
 ## Installation
 
 `npm install`
@@ -29,6 +26,7 @@ Create a `tasks.json` containing an object with filenames (key) and terminal com
 
 `node index.js`
 
-## CRON job on Mac OS
+## Misc.
 
-`crontab -e` with content similar to `0 12 * * * /usr/local/node /user/epic-sync/index.js`
+### CRON job on Mac OS
+In the terminal run `crontab -e` and add content similar to `0 12 * * * /usr/local/node /user/epic-sync/index.js`
