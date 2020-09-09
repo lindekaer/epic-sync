@@ -13,19 +13,19 @@ const TASK_FILE_PATH = path.join(__dirname, 'tasks.json')
 verify([
   {
     failure: process.env.GITHUB_ACCESS_TOKEN == null,
-    message: 'Please provide a Github access token as env variable'
+    message: 'Please provide a Github access token as env variable',
   },
   {
     failure: process.env.GITHUB_GIST_ID == null,
-    message: 'Please provide a Github gist ID as env variable'
+    message: 'Please provide a Github gist ID as env variable',
   },
   {
     failure: !fileExists.sync(TASK_FILE_PATH),
-    message: 'No tasks.json found - please create it.'
-  }
+    message: 'No tasks.json found - please create it.',
+  },
 ])
 
-const runTasksAndUpdateGists = async tasks => {
+const runTasksAndUpdateGists = async (tasks) => {
   // prettier-ignore
   const files = _flow(
     _mapValues(getCommandOutput),
@@ -36,19 +36,16 @@ const runTasksAndUpdateGists = async tasks => {
   await client.editAsync(process.env.GITHUB_GIST_ID, {
     description: `Backup from: ${new Date()}`,
     public: false,
-    files
+    files,
   })
 }
 
 // Utils
 // ==========================
-const getCommandOutput = shellCmd =>
-  execSync(shellCmd)
-    .toString()
-    .trim()
+const getCommandOutput = (shellCmd) => execSync(shellCmd).toString().trim()
 
 function verify(requirements) {
-  requirements.forEach(req => {
+  requirements.forEach((req) => {
     if (req.failure === true) {
       console.error(req.message)
       process.exit()
@@ -59,4 +56,5 @@ function verify(requirements) {
 // Run program
 // ==========================
 const tasks = require(TASK_FILE_PATH)
+execSync('/usr/local/bin/brew update')
 runTasksAndUpdateGists(tasks)
