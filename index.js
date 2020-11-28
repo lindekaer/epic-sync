@@ -56,5 +56,4 @@ function verify(requirements) {
 // Run program
 // ==========================
 const tasks = require(TASK_FILE_PATH)
-execSync('/usr/local/bin/brew update')
 runTasksAndUpdateGists(tasks)
