@@ -8,7 +8,8 @@ const _mapValues = require('lodash/fp/mapValues')
 const github = require('octonode')
 const fileExists = require('file-exists')
 
-const TASK_FILE_PATH = path.join(__dirname, 'tasks.json')
+const TASK_FILE_PATH = path.join(__dirname, 'tasks.js')
+const tasks = require(TASK_FILE_PATH)
 
 verify([
   {
@@ -55,5 +56,4 @@ function verify(requirements) {
 
 // Run program
 // ==========================
-const tasks = require(TASK_FILE_PATH)
 runTasksAndUpdateGists(tasks)
